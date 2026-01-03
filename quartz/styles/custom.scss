@@ -1,3 +1,168 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+/* =====================================================
+   Quartz v4 · Obsidian风 · 金融研究型知识库
+   Light + Dark Mode
+   ===================================================== */
+
+/* ---------- 1. 字体系统（系统字体，极稳） ---------- */
+:root {
+  --font-body: -apple-system, BlinkMacSystemFont,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Inter", "Segoe UI", sans-serif;
+
+  --font-heading: var(--font-body);
+
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo,
+    Consolas, monospace;
+}
+
+/* ---------- 2. 亮色模式（阅读型，不刺眼） ---------- */
+:root {
+  --background-primary: #ffffff;
+  --background-secondary: #f6f7f9;
+  --background-tertiary: #f0f1f4;
+
+  --text-normal: #1f2328;
+  --text-muted: #6b7280;
+  --text-faint: #9ca3af;
+
+  --accent: #4f46e5;        /* Obsidian 风克制强调 */
+  --accent-hover: #4338ca;
+
+  --border-color: #e5e7eb;
+
+  --code-background: #f3f4f6;
+}
+
+/* ---------- 3. 暗色模式（金融研究友好） ---------- */
+[data-theme="dark"] {
+  --background-primary: #0e1117;     /* 接近 Obsidian Dark */
+  --background-secondary: #161b22;
+  --background-tertiary: #1f2933;
+
+  --text-normal: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-faint: #6b7280;
+
+  --accent: #7c83ff;                /* 冷静、不跳 */
+  --accent-hover: #9aa0ff;
+
+  --border-color: #2d333b;
+
+  --code-background: #161b22;
+}
+
+/* ---------- 4. 页面与正文布局 ---------- */
+article {
+  max-width: 720px;          /* 阅读黄金宽度 */
+  line-height: 1.75;
+  font-size: 16.5px;
+}
+
+/* 移动端稍微收紧 */
+@media (max-width: 640px) {
+  article {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
+/* ---------- 5. 标题体系（像 Obsidian） ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2.4em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-top: 1.8em;
+}
+
+/* ---------- 6. 段落与列表（研究型排版） ---------- */
+p {
+  margin: 1em 0;
+}
+
+ul, ol {
+  margin-left: 1.2em;
+}
+
+li {
+  margin: 0.4em 0;
+}
+
+/* ---------- 7. 链接（弱网页感） ---------- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 8. 引用块（适合观点 / 摘要） ---------- */
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.6em 1em;
+  margin: 1.5em 0;
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
+}
+
+/* ---------- 9. 代码块（Obsidian 风） ---------- */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--code-background);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--code-background);
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+/* ---------- 10. 表格（金融数据友好） ---------- */
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+  font-size: 0.95em;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 0.5em 0.6em;
+}
+
+th {
+  background-color: var(--background-secondary);
+  font-weight: 600;
+}
+
+/* ---------- 11. 标签 / 元信息（弱存在感） ---------- */
+.metadata,
+.tags {
+  color: var(--text-faint);
+  font-size: 0.85em;
+}
